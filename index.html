@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/riotlogo.png">
+    <title>Valorant Fps Pack By - Rhynor</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="wrapper">
+            <div class="logo">
+                <figure>
+                    <img src="riotlogo.png" alt="">
+                </figure>
+            </div>
+            <div class="flex">
+            <h1 id="typing-title">VALORANT FPS <span>BY RHYNOR</span> </h1>
+            <p>Boost your performance and gain a competitive edge with our Valorant FPS Pack. It includes optimized settings, system tweaks, and easy setup guides to help you achieve smoother gameplay, lower latency, and higher frame rates—perfect for all skill levels. </p>
+             <div class="fpspack">
+                <a href="/Valorant V25A3 FPS Pack - By Rhynor.zip" download>Click Here</a>
+            </div>
+         </div>
+        </div>
+    </div>
+    <script>
+        const element = document.getElementById("typing-title");
+        
+       
+        const plainText = "VALORANT FPS ";
+        const styledText = "BY RHYNOR.";
+        const fullText = plainText + styledText;
+        
+        let index = 0;
+        let isDeleting = false;
+        
+        function typeEffect() {
+            const current = fullText.slice(0, index);
+        
+            if (index <= plainText.length) {
+               
+                element.innerHTML = current;
+            } else {
+               
+                const visiblePlain = current.slice(0, plainText.length);
+                const visibleStyled = current.slice(plainText.length);
+                element.innerHTML = `${visiblePlain}<span>${visibleStyled}</span>`;
+            }
+        
+            if (!isDeleting && index < fullText.length) {
+                index++;
+                setTimeout(typeEffect, 100);
+            } else if (isDeleting && index > 0) {
+                index--;
+                setTimeout(typeEffect, 50);
+            } else if (!isDeleting && index === fullText.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1500);
+            } else if (isDeleting && index === 0) {
+                isDeleting = false;
+                setTimeout(typeEffect, 500);
+            }
+        }
+        
+        typeEffect();
+        </script>
+        
+    
+</body>
+</html>
